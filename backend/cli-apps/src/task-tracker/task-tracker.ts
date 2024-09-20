@@ -1,20 +1,17 @@
 #!/usr/bin/env node
 
-import { addTask } from './add-task';
-import { changeTaskStatus } from './change-task-status';
-import { isValidValues } from './check-value';
-import { deleteTask } from './delete-task';
-import { listTasks } from './list-tasks';
-import { updateTask } from './update-task';
-import { getArgs } from './validate-cmd';
+import { getArgs } from './common/validate-cmd';
+import {
+  addTask,
+  updateTask,
+  deleteTask,
+  changeTaskStatus,
+  listTasks,
+} from './features';
 
 const main = () => {
   const validation = getArgs();
   if (validation.validated) {
-    // if (!isValidValues(validation.values) && validation.command !== 'list') {
-    //   console.log('Invalid command/value');
-    //   return;
-    // }
     switch (validation.command) {
       case 'add':
         addTask(validation.values);

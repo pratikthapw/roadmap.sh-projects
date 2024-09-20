@@ -1,6 +1,6 @@
 import { isValidValues } from './check-value';
-import { cliActions } from './config';
-import { TCliActions, TCmdProps, ValidValues } from './type';
+import { cliActions } from '../config';
+import { TCliActions, TCmdProps, ValidValues } from '../type';
 import yargs, { Arguments } from 'yargs';
 
 type typeReturn =

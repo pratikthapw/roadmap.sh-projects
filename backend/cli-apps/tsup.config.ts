@@ -1,15 +1,15 @@
 import { defineConfig } from 'tsup';
 
 export default defineConfig({
-  entry: ['src/index.ts'],
+  entry: ['src/task-tracker/task-tracker.ts'],
   splitting: false,
-  sourcemap: true,
+  sourcemap: false,
   clean: true,
   dts: false,
-  format: ['cjs'],  
+  format: ['cjs'],
   minify: true,
   bundle: true,
-  target: 'node16',  
+  target: 'node16',
   outDir: 'dist',
-  shims: true,  
+  shims: true,
 });

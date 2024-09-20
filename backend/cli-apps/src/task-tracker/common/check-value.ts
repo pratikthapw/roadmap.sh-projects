@@ -1,5 +1,5 @@
-import { formatTask } from './config';
-import { TTask, ValidValues } from './type';
+import { formatTask } from '../config';
+import { TTask, ValidValues } from '../type';
 
 type BaseType = {
   tasks: TTask[];

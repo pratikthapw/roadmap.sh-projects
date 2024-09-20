@@ -1,6 +1,6 @@
 import fs from 'node:fs';
-import { TTask } from './type';
-import { filepath } from './config';
+import { filepath } from '../config';
+import { TTask } from '../type';
 
 const getTasks = (): TTask[] => {
   try {
