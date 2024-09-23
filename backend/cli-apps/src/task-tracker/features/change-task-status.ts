@@ -1,8 +1,8 @@
 import fs from 'node:fs';
-import { checkTaskExists } from './check-value';
-import { getTasks } from './get-tasks';
-import { TaskType, TTask, ValidValues } from './type';
-import { filepath } from './config';
+import { getTasks } from '../common/get-tasks';
+import { checkTaskExists } from '../common/check-value';
+import { TaskType, TTask, ValidValues } from '../type';
+import { filepath } from '../config';
 
 const changeTaskStatus = (values: ValidValues, type: TaskType) => {
   if (values.length > 1 || typeof values[0] === 'string') {

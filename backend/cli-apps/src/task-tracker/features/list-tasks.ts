@@ -1,5 +1,5 @@
-import { getTasks } from './get-tasks';
-import { TaskType, TTask } from './type';
+import { getTasks } from '../common/get-tasks';
+import { TaskType, TTask } from '../type';
 
 const listTasks = (type?: TaskType): void => {
   const existingTasks = getTasks();

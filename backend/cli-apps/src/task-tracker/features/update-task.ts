@@ -1,8 +1,8 @@
 import fs from 'node:fs';
-import { checkTaskExists } from './check-value';
-import { getTasks } from './get-tasks';
-import { ValidValues } from './type';
-import { filepath } from './config';
+import { ValidValues } from '../type';
+import { getTasks } from '../common/get-tasks';
+import { checkTaskExists } from '../common/check-value';
+import { filepath } from '../config';
 
 const updateTask = (values: ValidValues): void => {
   if (values.length === 1) {

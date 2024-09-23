@@ -1,7 +1,7 @@
 import { isValidValues } from './check-value';
-import { cliActions } from './config';
-import { TCliActions, TCmdProps, ValidValues } from './type';
-import yargs, { Arguments } from 'yargs';
+import { cliActions } from '../config';
+import { TCliActions, ValidValues } from '../type';
+import { getArgs } from '@shared';
 
 type typeReturn =
   | {
@@ -11,14 +11,13 @@ type typeReturn =
     }
   | { validated: false };
 
-const getArgs = (): typeReturn => {
-  const argv = yargs.argv as Arguments;
-  const args = argv._;
+const validationResult = (): typeReturn => {
+  const args = getArgs();
   const cmd = args?.[0];
   const values = args.filter((_, i) => i !== 0) as ValidValues;
   const validation = validateCmd(cmd);
-  if (!isValidValues(values) && cmd !== 'list') {
-    console.log('Invalid command/value');
+  if (!isValidValues(values) && cmd !== 'list' && validation) {
+    console.log('Invalid value for the respective command');
     return { validated: false };
   }
   return {
@@ -50,4 +49,4 @@ const validateCmd = (userAction: string | number | undefined): boolean => {
   return true;
 };
 
-export { getArgs };
+export { validationResult };
