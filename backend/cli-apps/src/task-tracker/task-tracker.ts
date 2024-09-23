@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { getArgs } from './common/validate-cmd';
+import { validationResult } from './common/validate-cmd';
 import {
   addTask,
   updateTask,
@@ -10,7 +10,7 @@ import {
 } from './features';
 
 const main = () => {
-  const validation = getArgs();
+  const validation = validationResult();
   if (validation.validated) {
     switch (validation.command) {
       case 'add':
